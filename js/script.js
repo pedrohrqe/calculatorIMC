@@ -118,20 +118,19 @@ function validDigits(text) {
 }
 
 function imcColorClassification(value) {
-    console.log(value)
     switch (true) {
-        case (value >= 0 || value < 18.5):
-            return "#d73a1d"
-        case (value >= 18.5 || value <= 24, 9):
-            return "#397b4d"
-        case (value >= 25 || value <= 29, 9):
-            return "#e38726"
-        case (value >= 30 || value <= 39, 9):
-            return "#d73a1d"
-        case (value >= 40):
-            return "#d73a1d"
+        case value >= 0 && value < 18.5:
+            return "#ff0000";
+        case value >= 18.5 && value <= 24.9:
+            return "#00b600";
+        case value >= 25 && value <= 29.9:
+            return "#ff8800";
+        case value >= 30 && value <= 39.9:
+            return "#ff0000";
+        case value >= 40:
+            return "#ff0000";
         default:
-            return "#000000"
+            return "#000000";
     }
 }
 
@@ -157,7 +156,6 @@ btnClear.addEventListener("click", (e) => {
     e.preventDefault()
     height.value = ""
     weight.value = ""
-    console.log("Clique")
 })
 
 btnCalculate.addEventListener("click", (e) => {
@@ -185,7 +183,6 @@ btnBack.addEventListener("click", (e) => {
 })
 
 window.addEventListener("keydown", (e) => {
-    console.log(screen)
     if (e.key === "Enter" && screen == 1) {
         btnCalculate.click()
     }
